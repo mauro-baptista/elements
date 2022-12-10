@@ -1,0 +1,33 @@
+{
+    "name": "maurobaptista/elements",
+    "description": "Simple set of components to be used in an app dashboard",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MauroBaptista\\Elements\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mauro Baptista",
+            "email": "mauro@carnou.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^9.0"
+    },
+
+    "require-dev": {
+        "orchestra/testbench": "^7.15"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MauroBaptista\\Elements\\ServiceProvider"
+            ],
+            "dont-discover": []
+        }
+    }
+}
