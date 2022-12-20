@@ -41,7 +41,7 @@
     {{ $attributes->only('class') }}
 >
     @if ($label !== null)
-        <x-form.label :name="$name" :label="$label" :optional="$optional" />
+        <x-elements::form.label :name="$name" :label="$label" :optional="$optional" />
     @endif
     <div class="mt-1 flex rounded-md shadow-sm">
         <button x-on:click="subtract" type="button"
@@ -61,7 +61,7 @@
                 $class => !$hasError,
                 "focus:ring-red-500 focus:border-red-500 border-red-300 text-red-900" => $hasError,
             ]) />
-            <x-form.input-error :name="$name" />
+            <x-elements::form.input-error :name="$name" />
         </div>
         <button x-on:click="add" type="button"
             @class([
