@@ -51,7 +51,7 @@
         @if ($progressBarSize !== null)
             <div x-show="isUploading" class="p-4">
                 <div class="text-sm font-medium text-gray-700">Uploading...</div>
-                <div class="relative" :style="{width: size + 'px'">
+                <div class="relative" :style="{width: size + 'px'}">
                     <div class="bg-gray-200 absolute" :style="{width: size + 'px'}">&nbsp;</div>
                     <div class="bg-green-500 absolute" :style="{width: (progress / 100 * size) + 'px'}">&nbsp;</div>
                     <div :class="progress > 55 ? 'text-white' : 'text-gray-800'" class="bg-transparent absolute text-sm font-medium text-center" :style="{width: size + 'px'}">
