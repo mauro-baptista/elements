@@ -72,8 +72,8 @@ class Notification
     {
         return [
             'type' => $this->type,
-            'message' => $this->message,
             'title' => $this->title,
+            'message' => $this->message,
             'seconds' => $this->seconds,
         ];
     }
