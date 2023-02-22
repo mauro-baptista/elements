@@ -60,11 +60,21 @@ class Notification
 
     public function send(): void
     {
-        session()->flash('notification', [
+        session()->flash('notification', $this->toArray());
+    }
+
+    public function emit(): array
+    {
+        return ['notification', $this->toArray()];
+    }
+
+    public function toArray(): array
+    {
+        return [
             'type' => $this->type,
             'message' => $this->message,
             'title' => $this->title,
             'seconds' => $this->seconds,
-        ]);
+        ];
     }
 }
