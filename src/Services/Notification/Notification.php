@@ -65,7 +65,7 @@ class Notification
 
     public function emit(): array
     {
-        return ['notification', $this->toArray()];
+        return ['notification', ... array_values($this->toArray())];
     }
 
     public function toArray(): array
