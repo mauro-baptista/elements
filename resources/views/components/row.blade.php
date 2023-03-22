@@ -9,6 +9,7 @@
     'link' => null,
     'singleColumn' => false,
     'color' => null,
+    'imageClass' => 'w-20',
 ])
 
 @php
@@ -34,7 +35,7 @@
                     @if ($withImage)
                         <div class="flex-shrink-0">
                             @if ($image)
-                                <img class="w-20" src="{{ $image  }}" alt="{{ $imageAlt }}">
+                                <img class="{{ $imageClass }}" src="{{ $image  }}" alt="{{ $imageAlt }}">
                             @else
                                 <div class="h-12 w-12 rounded-full bg-main-400 text-white text-3xl text-center pt-1" style="{{ $backgroundStyle }}">
                                     {{ $imageAlt[0] }}
