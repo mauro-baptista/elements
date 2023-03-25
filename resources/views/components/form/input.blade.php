@@ -4,7 +4,7 @@
 ])
 
 @php
-    $name = $attributes->get('wire:model') ?? $attributes->get('wire:model.defer');
+    $name = $attributes->get('wire:model') ?? $attributes->get('wire:model.defer') ?? $attributes->get('wire:model.lazy');
     $hasError = $errors->has($name);
 @endphp
 

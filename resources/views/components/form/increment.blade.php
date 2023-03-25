@@ -9,7 +9,7 @@
 ])
 
 @php
-    $name = $attributes->get('wire:model') ?? $attributes->get('wire:model.defer') ?? $name;
+    $name = $attributes->get('wire:model') ?? $attributes->get('wire:model.defer') ?? $attributes->get('wire:model.lazy') ?? $name;
     $hasError = $errors->has($name);
     $class = $asCompany
         ? 'focus:ring-company-color focus:border-company-color border-gray-300'
