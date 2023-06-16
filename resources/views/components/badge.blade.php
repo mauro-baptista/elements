@@ -4,8 +4,11 @@
 ])
 
 @php
-    $color = app(MauroBaptista\Elements\Services\Colors\Colors::class)->get($color);
-    $class = $color->text . ' ' . $color->background;
+    $class = '';
+    if ($color !== null) {
+        $color = app(MauroBaptista\Elements\Services\Colors\Colors::class)->get($color);
+        $class = $color->text . ' ' . $color->background;
+    }
 @endphp
 
 <span {{ $attributes->class(['inline-flex items-center px-2 py-0.5 rounded text-xs font-medium', $class]) }}>
