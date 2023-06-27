@@ -17,7 +17,7 @@
         limit: {{ $limit }},
 
         get display() { return this.limit > 1 },
-        get count() { return this.value.length },
+        get count() { return this.value ? this.value.length : 0},
     }"
 >
 
