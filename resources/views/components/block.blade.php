@@ -66,6 +66,22 @@
                 'bg-white shadow-sm rounded-md sm:rounded-lg' => !$noBackground,
             ])
     >
+        @if (($title ?? false) || ($description ?? false))
+            <div class="md:col-span-1 flex justify-between m-auto px-4 py-5">
+                <div class="px-4 sm:px-0">
+                    @if ($title ?? false)
+                        <h3 class="text-lg font-medium text-gray-900">{{ $title }}</h3>
+                    @endif
+
+                    @if ($description ?? false)
+                        <p class="mt-1 text-sm text-gray-600">
+                            {{ $description }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+        @endif
+
         <div @class([
             'm-auto',
             'px-4 py-5' => !$noBackground && !$compact,

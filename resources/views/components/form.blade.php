@@ -21,6 +21,18 @@
             </x-slot:actions>
         @endif
 
+        @if ($title ?? false)
+            <x-slot:title>
+                {{ $title }}
+            </x-slot:title>
+        @endif
+
+        @if ($description ?? false)
+            <x-slot:description>
+                {{ $description }}
+            </x-slot:description>
+        @endif
+
         <div class="grid grid-cols-1 gap-y-6 gap-x-4">
             {{ $slot }}
         </div>
