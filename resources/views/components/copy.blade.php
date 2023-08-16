@@ -26,29 +26,27 @@
     </div>
 </div>
 
-@once
-    @push('scripts')
-        <script>
-            document.addEventListener('alpine:init', () => {
-                Alpine.data('{{ $id }}', () => ({
-                    text: 'Copy',
+@push('scripts')
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('{{ $id }}', () => ({
+                text: 'Copy',
 
-                    change(text) {
-                        this.text = text
-                    },
+                change(text) {
+                    this.text = text
+                },
 
-                    copy(id) {
-                        let text = document.getElementById(id)
-                        text.classList.remove('hidden')
-                        text.select()
-                        document.execCommand("copy")
-                        text.classList.add('hidden')
+                copy(id) {
+                    let text = document.getElementById(id)
+                    text.classList.remove('hidden')
+                    text.select()
+                    document.execCommand("copy")
+                    text.classList.add('hidden')
 
-                        this.change('Copied')
-                        setTimeout(() => this.change('Copy'), 1000)
-                    }
-                }))
-            })
-        </script>
-    @endpush
-@endonce
+                    this.change('Copied')
+                    setTimeout(() => this.change('Copy'), 1000)
+                }
+            }))
+        })
+    </script>
+@endpush
